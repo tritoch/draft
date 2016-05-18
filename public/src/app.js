@@ -11,7 +11,7 @@ let App = {
 
   state: {
     id: null,
-    name: 'newfriend',
+    name: 'dr4fter',
 
     seats: 8,
     type: 'draft',
