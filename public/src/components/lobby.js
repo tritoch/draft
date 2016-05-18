@@ -52,8 +52,8 @@ function content() {
     })
   ]
 
-  let cards = _.seq(15, 8).map(x => d.option({}, x))
-  let packs = _.seq( 7, 3).map(x => d.option({}, x))
+  let cards = _.seq(24, 4).map(x => d.option({}, x))
+  let packs = _.seq(12, 3).map(x => d.option({}, x))
   let cubeDraft = d.div({},
     d.select({ valueLink: App.link('cards') }, cards),
     ' cards ',
@@ -72,7 +72,7 @@ function content() {
 }
 
 function Create() {
-  let seats = _.seq(8, 2).map(x =>
+  let seats = _.seq(100, 2).map(x =>
     d.option({}, x))
 
   let types = ['draft', 'sealed', 'cube draft', 'cube sealed', 'chaos', 'editor']
