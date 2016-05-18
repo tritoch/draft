@@ -11,7 +11,7 @@ export default React.createClass({
   render() {
     return d.div({},
       Chat(),
-      d.h1({}, 'dr4ftcom'),
+      d.h1({}, 'dr4ft.com'),
       d.p({ className: 'error' }, App.err),
       Create(),
       d.footer({},
