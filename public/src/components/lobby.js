@@ -11,14 +11,13 @@ export default React.createClass({
   render() {
     return d.div({},
       Chat(),
-      d.h1({}, 'drafts.in'),
+      d.h1({}, 'dr4ftcom'),
       d.p({ className: 'error' }, App.err),
       Create(),
       d.footer({},
         d.div({},
-          d.a({ className: 'icon ion-social-github', href: 'https://github.com/aeosynth/draft' }),
-          d.a({ className: 'icon ion-social-twitter', href: 'https://twitter.com/aeosynth' }),
-          d.a({ className: 'icon ion-android-mail', href: 'mailto:james.r.campos@gmail.com' })),
+          d.a({ className: 'icon ion-social-github', href: 'https://github.com/tritoch/draft' }),
+          d.a({ className: 'icon ion-android-mail', href: 'mailto:tritochs@gmail.com' })),
         d.div({},
           d.small({}, 'unaffiliated with wizards of the coast'))))
   }
