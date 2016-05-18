@@ -5,7 +5,7 @@ module.exports = class extends EventEmitter {
   constructor() {
     Object.assign(this, {
       isBot: true,
-      name: 'bot',
+      name: 'dr4ft bot',
       packs: [],
       time: 0
     })
