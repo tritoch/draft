@@ -14,9 +14,9 @@ function transform(cube, seats, type) {
 
   assert(typeof list === 'string', 'typeof list')
   assert(typeof cards === 'number', 'typeof cards')
-  assert(4 <= cards && cards <= 24, 'cards range')
+  assert(5 <= cards && cards <= 30, 'cards range')
   assert(typeof packs === 'number', 'typeof packs')
-  assert(3 <= packs && packs <= 12, 'packs range')
+  assert(1 <= packs && packs <= 12, 'packs range')
 
   list = list.split('\n').map(_.ascii)
 
@@ -24,7 +24,7 @@ function transform(cube, seats, type) {
     ? seats * cards * packs
     : seats * 90
   assert(min <= list.length && list.length <= 1e5,
-    `this cube needs between ${min} and 100000 cards; it has ${list.length}`)
+    `this cube needs between ${min} and 100,000 cards; it has ${list.length}`)
 
   var bad = []
   for (var cardName of list)
@@ -70,8 +70,8 @@ var util = module.exports = {
 
     if (/cube/.test(type))
       transform(cube, seats, type)
-    //remove this check to allow Random
-    //TODO add if check for random set
+    //remove the below check for now to allow Random sets
+    //TODO add if check for Random set
     //else
     //  sets.forEach(set => assert(set in Sets, `${set} in Sets`))
   }

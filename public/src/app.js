@@ -11,6 +11,8 @@ let App = {
 
   state: {
     id: null,
+    numPlayers: 0,
+    numActiveGames: 0,
     name: 'dr4fter',
 
     seats: 8,

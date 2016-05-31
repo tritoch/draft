@@ -12,6 +12,8 @@ export default React.createClass({
     return d.div({},
       Chat(),
       d.h1({}, 'dr4ft.com'),
+      d.p({}, `${App.state.numPlayers} ${App.state.numPlayers === 1 ? 'player' : 'players'}
+               playing ${App.state.numActiveGames} ${App.state.numActiveGames === 1 ? 'game' : 'games'}`),
       d.p({ className: 'error' }, App.err),
       Create(),
       d.footer({},
@@ -41,6 +43,7 @@ function Sets(selectedSet, index) {
 
 function content() {
   let sets = App.state.sets.map(Sets)
+
   let setsTop = d.div({}, sets.slice(0, 3))
   let setsBot = d.div({}, sets.slice(3))
 
@@ -51,9 +54,9 @@ function content() {
       valueLink: App.link('list')
     })
   ]
-
-  let cards = _.seq(24, 4).map(x => d.option({}, x))
-  let packs = _.seq(12, 3).map(x => d.option({}, x))
+  
+  let cards = _.seq(30, 5).map(x => d.option({}, x))
+  let packs = _.seq(12, 1).map(x => d.option({}, x))
   let cubeDraft = d.div({},
     d.select({ valueLink: App.link('cards') }, cards),
     ' cards ',
@@ -67,7 +70,6 @@ function content() {
     case 'cube draft' : return [cube, cubeDraft]
     case 'cube sealed': return cube
     case 'chaos': return chaos
-    case 'editor': return d.a({ href: 'http://editor.draft.wtf' }, 'editor')
   }
 }
 
@@ -75,7 +77,7 @@ function Create() {
   let seats = _.seq(100, 2).map(x =>
     d.option({}, x))
 
-  let types = ['draft', 'sealed', 'cube draft', 'cube sealed', 'chaos', 'editor']
+  let types = ['draft', 'sealed', 'cube draft', 'cube sealed', 'chaos']
     .map(type =>
       d.button({
         disabled: type === App.state.type,
