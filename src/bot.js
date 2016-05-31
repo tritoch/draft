@@ -7,7 +7,7 @@ module.exports = class extends EventEmitter {
     Object.assign(this, {
       isBot: true,
       isConnected: true,
-      name: 'bot',
+      name: 'dr4ft bot',
       packs: [],
       time: 0,
     })

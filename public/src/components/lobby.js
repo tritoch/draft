@@ -11,14 +11,15 @@ export default React.createClass({
   render() {
     return d.div({},
       Chat(),
-      d.h1({}, 'drafts.ninja'),
+      d.h1({}, 'dr4ft.com'),
       d.p({}, `${App.state.numPlayers} ${App.state.numPlayers === 1 ? 'player' : 'players'}
                playing ${App.state.numActiveGames} ${App.state.numActiveGames === 1 ? 'game' : 'games'}`),
       d.p({ className: 'error' }, App.err),
       Create(),
       d.footer({},
         d.div({},
-          d.a({ className: 'icon ion-social-github', href: 'https://github.com/arxanas/draft' })),
+          d.a({ className: 'icon ion-social-github', href: 'https://github.com/tritoch/draft' }),
+          d.a({ className: 'icon ion-android-mail', href: 'mailto:tritochs@gmail.com' })),
         d.div({},
           d.small({}, 'unaffiliated with wizards of the coast'))))
   }
@@ -53,9 +54,9 @@ function content() {
       valueLink: App.link('list')
     })
   ]
-
-  let cards = _.seq(15, 8).map(x => d.option({}, x))
-  let packs = _.seq(12, 3).map(x => d.option({}, x))
+  
+  let cards = _.seq(30, 5).map(x => d.option({}, x))
+  let packs = _.seq(12, 1).map(x => d.option({}, x))
   let cubeDraft = d.div({},
     d.select({ valueLink: App.link('cards') }, cards),
     ' cards ',
